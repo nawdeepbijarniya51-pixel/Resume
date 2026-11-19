@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Navdeep Bijarniya, computer science undergraduate and AI/ML developer.">
+  <title>Navdeep Bijarniya | Resume</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b35;
+      --muted: #526873;
+      --line: #d7e1e4;
+      --accent: #147d78;
+      --paper: #fff;
+      --canvas: #eaf0f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 38px 18px;
+      color: var(--ink);
+      background: var(--canvas);
+      font: 14px/1.5 "Segoe UI", Arial, sans-serif;
+    }
+
+    a { color: inherit; text-decoration-color: #9ab9bb; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      width: min(850px, 100%);
+      margin: 0 auto 12px;
+    }
+
+    .print-button {
+      border: 0;
+      border-radius: 6px;
+      padding: 9px 14px;
+      color: white;
+      background: var(--accent);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .resume {
+      width: min(850px, 100%);
+      min-height: 1090px;
+      margin: 0 auto;
+      padding: 54px 62px;
+      background: var(--paper);
+      box-shadow: 0 18px 55px rgba(27, 55, 62, .12);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 22px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 37px;
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .role {
+      margin: 9px 0 0;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: .01em;
+    }
+
+    .contact {
+      display: grid;
+      gap: 5px;
+      max-width: 390px;
+      padding-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .contact a { font-weight: 600; }
+    .contact-line { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 10px; }
+
+    .intro {
+      max-width: 700px;
+      margin: 20px 0 0;
+      color: #344c56;
+      font-size: 13.5px;
+    }
+
+    .section { margin-top: 25px; }
+    .section.education { margin-top: 19px; }
+
+    .education-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .education-school { font-size: 13px; font-weight: 700; }
+    .education-dates { color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .education-detail { display: flex; justify-content: space-between; gap: 12px; margin-top: 3px; color: var(--muted); font-size: 12px; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    .project {
+      padding: 0 0 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e8edef;
+      break-inside: avoid;
+    }
+
+    .project:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+
+    .project-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .project h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+
+    .project-link {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 650;
+    }
+
+    .project p {
+      margin: 5px 0 0;
+      color: #344c56;
+      font-size: 12.5px;
+      line-height: 1.48;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 7px;
+    }
+
+    .tag {
+      padding: 2px 7px;
+      border: 1px solid #dce8e8;
+      border-radius: 4px;
+      color: #42626a;
+      background: #f5f9f8;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .skill-groups { display: grid; gap: 7px; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+      font-size: 12.5px;
+    }
+
+    .skill-row strong { color: #29444e; }
+    .skill-row span { color: #405862; }
+
+    .achievements { margin: 0; padding-left: 18px; color: #405862; font-size: 12px; }
+    .achievements li + li { margin-top: 4px; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 19px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10.5px;
+    }
+
+    @media (max-width: 650px) {
+      body { padding: 14px 0; }
+      .toolbar { width: calc(100% - 24px); }
+      .resume { min-height: 0; padding: 32px 24px; }
+      .header { flex-direction: column; gap: 13px; }
+      .name { font-size: 32px; }
+      .contact { text-align: left; }
+      .contact-line { justify-content: flex-start; }
+      .project-heading { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .skill-row { grid-template-columns: 1fr; gap: 1px; }
+      .education-row, .education-detail { align-items: flex-start; flex-direction: column; gap: 2px; }
+    }
+
+    @page { size: A4; margin: 12mm; }
+
+    @media print {
+      :root { --ink: #172b35; --accent: #126d69; }
+      body { padding: 0; background: white; font-size: 11pt; }
+      .toolbar { display: none; }
+      .resume {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+      .section { margin-top: 15px; }
+      .section.education { margin-top: 12px; }
+      .project { padding-bottom: 7px; margin-bottom: 7px; }
+      .intro { margin-top: 12px; font-size: 12px; }
+      a { text-decoration: none; }
+      * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="print-button" type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <main class="resume">
+    <header class="header">
+      <div>
+        <h1 class="name">Navdeep Bijarniya</h1>
+        <p class="role">Computer Science Undergraduate · AI/ML Developer</p>
+      </div>
+      <div class="contact" aria-label="Contact links">
+        <div class="contact-line">
+          <a href="mailto:navdeepbijarniya51@gmail.com">navdeepbijarniya51@gmail.com</a>
+          <a href="tel:+919950845017">+91 99508 45017</a>
+        </div>
+        <div class="contact-line">
+          <span>Jalandhar, Punjab</span>
+          <a href="https://github.com/nawdeepbijarniya51-pixel">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <p class="intro">
+      Computer Science undergraduate at NIT Jalandhar exploring deep-learning systems
+      from first principles and building applied LLM/RAG applications. Research interests
+      include Transformers, NLP, retrieval-augmented generation, efficient model
+      adaptation, and agentic AI systems.
+    </p>
+
+    <section class="section education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div class="education-row">
+        <span class="education-school">Dr. B.R. Ambedkar National Institute of Technology Jalandhar</span>
+        <span class="education-dates">2025–2029</span>
+      </div>
+      <div class="education-detail">
+        <span>B.Tech, Computer Science &amp; Engineering · 3rd Semester</span>
+        <span>CGPA: 8.07 / 10</span>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Selected Projects</h2>
+
+      <article class="project">
+        <div class="project-heading">
+          <h3>Docent — Retrieval-Augmented Document Intelligence</h3>
+          <span><a class="project-link" href="https://github.com/nawdeepbijarniya51-pixel/Docent">GitHub ↗</a> · <a class="project-link" href="https://nawdeepbijarniya51-pixel.github.io/Docent/">Demo ↗</a></span>
+        </div>
+        <p>
+          Designed asynchronous PDF ingestion and source-attributed Q&amp;A using query
+          routing, Qdrant dense+sparse retrieval, and Cohere cross-encoder reranking.
+          Added pollable background jobs with stage-level progress and content-hash
+          deduplication for repeat uploads.
+        </p>
+        <div class="tags" aria-label="Technologies">
+          <span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">Qdrant</span>
+          <span class="tag">LLM APIs</span><span class="tag">Cohere Rerank</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-heading">
+          <h3>Transformer From Scratch — Raw NumPy</h3>
+          <span><a class="project-link" href="https://github.com/nawdeepbijarniya51-pixel/transformer-from-scratch-numpy">GitHub ↗</a> · <a class="project-link" href="https://nptransformerlab.netlify.app/">Demo ↗</a></span>
+        </div>
+        <p>
+          Implemented an encoder–decoder Transformer without deep-learning frameworks,
+          hand-deriving forward and backward passes for attention, normalization,
+          embeddings, and loss. Gradient-checked trainable components against numerical
+          finite differences (agreement below 1e-6); built an autoregressive demo.
+        </p>
+        <div class="tags" aria-label="Technologies">
+          <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Attention</span>
+          <span class="tag">Backpropagation</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-heading">
+          <h3>GAN Pixel Lab — Fashion-MNIST Generation</h3>
+          <span><a class="project-link" href="https://github.com/nawdeepbijarniya51-pixel/GAN_PIXEL_LAB">GitHub ↗</a> · <a class="project-link" href="https://nawdeepbijarniya51-pixel.github.io/GAN_PIXEL_LAB/">Demo ↗</a></span>
+        </div>
+        <p>
+          Implemented a Fashion-MNIST GAN in NumPy, including network backpropagation,
+          LayerNorm, activations, and Adam. Added a FastAPI inference endpoint, an
+          interactive generation interface, and inference-only evaluation with
+          sample, diversity, and latent-space visualizations.
+        </p>
+        <div class="tags" aria-label="Technologies">
+          <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">FastAPI</span>
+          <span class="tag">GANs</span><span class="tag">HTML/CSS/JavaScript</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-heading">
+          <h3>LSTM — Sequence Modeling &amp; Visualization</h3>
+          <a class="project-link" href="https://github.com/nawdeepbijarniya51-pixel/LSTM">GitHub ↗</a>
+        </div>
+        <p>
+          Developed LSTM sequence-modeling examples for prediction and text generation,
+          with an interactive browser dashboard for visualizing and experimenting with
+          recurrent-network behavior.
+        </p>
+        <div class="tags" aria-label="Technologies">
+          <span class="tag">Python</span><span class="tag">TensorFlow/Keras</span>
+          <span class="tag">FastAPI</span><span class="tag">JavaScript</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Technical Skills</h2>
+      <div class="skill-groups">
+        <div class="skill-row"><strong>Languages</strong><span>Python, C++, JavaScript</span></div>
+        <div class="skill-row"><strong>ML / Deep Learning</strong><span>NumPy, TensorFlow/Keras, Scikit-learn, neural networks, RNNs/LSTMs, Transformers, OpenCV, YOLO, Pandas</span></div>
+        <div class="skill-row"><strong>GenAI / LLMs</strong><span>LangChain, LangGraph, Hugging Face, Ollama, RAG, embeddings, vector search</span></div>
+        <div class="skill-row"><strong>Backend &amp; Tools</strong><span>FastAPI, Flask, REST APIs, Streamlit, PostgreSQL, Qdrant, ChromaDB, Git/GitHub</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="achievements-title">
+      <h2 class="section-title" id="achievements-title">Achievements</h2>
+      <ul class="achievements">
+        <li>Solved 300+ Data Structures and Algorithms problems on LeetCode.</li>
+        <li>Derived and implemented Transformer backpropagation from first principles, with numerical gradient checks for trainable components.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Jalandhar, Punjab</span>
+      <span>Updated 2026</span>
+    </footer>
+  </main>
+</body>
+</html>
